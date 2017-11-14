@@ -1,0 +1,49 @@
+.header.clearfix
+  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    .container
+      a.navbar-brand(href="/") EventBrite
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href="#") Browse Events
+          li.dropdown
+            a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) ORGANIZE
+              span.caret
+            .dropdown-menu( role="menu" )
+              a( href="#" ) Action
+              a( href="#" ) Another action
+              a( href="#" ) Something else here
+              .dropdown-divider 
+              a( href="#" ) Separated link
+              a( href="#" ) One more separated link
+          
+          li.dropdown
+              a.dropdown-toggle( href="#", data-toggle="dropdown", role="button", aria-expanded="false" ) HELP
+                span.caret
+              .dropdown-menu( role="menu" )
+                a( href="#" ) Action
+                a( href="#" ) Another action
+                a( href="#" ) Something else here
+                .dropdown-divider 
+                a( href="#" ) Separated link
+                a( href="#" ) One more separated link
+
+          li.nav-item
+            a.nav-link(href="/questions") QUESTIONS
+          li.nav-item
+            a.nav-link(href="/users") USER
+          if (!currentUser) 
+            li.nav-item
+              a.nav-link(href='/signin') SIGN IN
+            li.nav-item
+              a.nav-link(href='/users/new') SIGN UP
+          else
+            li.nav-item
+              a.nav-link(href=`/users/${currentUser._id}`) My Profile
+            li.nav-item
+              a.nav-link(href='/signout') Signout
+        
+          
