@@ -17,6 +17,11 @@ block content
         dd.col-sm-9
           img.img-fluid.rounded-circle(src= user.facebook.photo)
 
+      if user.kakaotalk.id
+        dt.col-sm-3 KakaoTalk
+        dd.col-sm-9
+          img.img-fluid.rounded-circle(src= user.kakaotalk.photo)
+
     hr
     p
       a.btn.btn-outline-secondary(href='/users/') List

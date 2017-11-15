@@ -23,6 +23,20 @@ module.exports = (app, passport) => {
     }
   );
 
+  app.get('/auth/kakaotalk',
+  passport.authenticate('kakaotalk', { scope : 'email' })
+  );
+
+app.get('/auth/kakaotalk/callback',
+  passport.authenticate('kakaotalk', {
+    failureRedirect : '/signin',
+    failureFlash : true // allow flash messages
+  }), (req, res, next) => {
+    req.flash('success', 'Welcome!');
+    res.redirect('/questions');
+  }
+);
+
   app.get('/signout', (req, res) => {
     req.logout();
     req.flash('success', 'Successfully signed out');
