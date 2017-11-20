@@ -1,9 +1,80 @@
 .form-group
-  label(for="title") Title
-  input.form-control(type="text", name="title", placeholder="What's your question?", value=question.title)
-.form-group
-  label(for="question") Question
-  textarea.form-control(name="content", rows="5")= question.content
+  label(for="title") EVENT TITLE
+  input.form-control(type="text", name="title", placeholder="Give it a short distinct name?", value=question.title)
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
+.form-group
+  label(for="location") LOCATION
+  input.form-control(type="text", name="location", placeholder="Search for a venue or address", value=question.location)
+.row
+  .col-6
+    .form-group
+      label(for="date-start") STARTS
+      input.form-control(type="date", name="date-start", placeholder="YYY-MM-DD", value=question.date-start)
+  .col-6
+    .form-group
+      label(for="date-end") ENDS
+      input.form-control(type="date", name="date-end", placeholder="YYY-MM-DD", value=question.date-end)
+.form-group
+  label(for="question") EVENT DESCRIPTION
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="organizer") ORGANIZER NAME
+  input.form-control(type="text", name="organizer", placeholder="Who's organizing this event?", value=question.organizer)
+.form-group
+  label(for="organizer") ORGANIZER DESCRIPTION
+  textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="type") EVENT TYPE
+  br
+  select(id="type" name="event type")
+    option(value="Select the type of event") select the type of event
+    option(value="Appearance or Signing") Appearance or Signing
+    option(value="Attraction") Attraction
+    option(value="Camp, Trip, or Retreat") Camp, Trip, or Retreat
+    option(value="Concert or Performance") Concert or Performance
+    option(value="Class, Training, or Workshop") Class, Training, or Workshop
+    option(value="Concert or Performance") Concert or Performance
+    option(value="Conference") Conference
+    option(value="Convention") Convention
+    option(value="Dinner or Gala") Dinner or Gala
+    option(value="Festival or Fail") Festival or Fail
+    option(value="Game or Competition") Game or Competition
+    option(value="Metting or Networking Event") Metting or Networking Event
+    option(value="Other") Other
+    option(value="Party or Social Gathering") Party or Social Gathering
+    option(value="Race or Endurance Event") Race or Endurance Event
+    option(value="Rally") Rally
+    option(value="Screening") Screening
+    option(value="Seminar or Talk") Seminar or Talk
+    option(value="Tour") Tour
+    option(value="Tournament") Tournament
+    option(value="Tradeshow, Consumer Show, or Expo") Tradeshow, Consumer Show, or Expo
+.form-group
+  label(for="topic") EVENT TOPIC
+  br
+  select(id="topic" name="event topic")
+    option(value="Auto, Boat & Air") Auto, Boat & Air
+    option(value="Business & Professional") Business & Professional
+    option(value="Charity & Causes") Charity & Causes
+    option(value="Community & Culture") Community & Culture
+    option(value="Family & Education") Family & Education
+    option(value="Fashion & Beauty") Fashion & Beauty
+    //- 
+    option(value="Concert or Performance") Concert or Performance
+    option(value="Conference") Conference
+    option(value="Convention") Convention
+    option(value="Dinner or Gala") Dinner or Gala
+    option(value="Festival or Fail") Festival or Fail
+    option(value="Game or Competition") Game or Competition
+    option(value="Metting or Networking Event") Metting or Networking Event
+    option(value="Other") Other
+    option(value="Party or Social Gathering") Party or Social Gathering
+    option(value="Race or Endurance Event") Race or Endurance Event
+    option(value="Rally") Rally
+    option(value="Screening") Screening
+    option(value="Seminar or Talk") Seminar or Talk
+    option(value="Tour") Tour
+    option(value="Tournament") Tournament
+    option(value="Tradeshow, Consumer Show, or Expo") Tradeshow, Consumer Show, or Expo
