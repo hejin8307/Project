@@ -54,6 +54,9 @@ a:hover {
     color: #bababa;
     position: absolute; }
 
+.headline {
+  font-size: 30px; }
+
 .form-signin {
   width: 300px;
   margin: 0 auto;

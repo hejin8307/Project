@@ -14,13 +14,11 @@
               a.nav-link(href='/signin') Signin
             li.nav-item
               a.nav-link(href='/users/new') Signup
-          //- li.nav-item
-          //-   a.nav-link(href="/events") CREATE EVENT
           else
             li.nav-item
               a.nav-link(href=`/users/${currentUser._id}`) My Profile
             li.nav-item
               a.nav-link(href='/signout') Signout
           li.nav-item
-            a.nav-link(href="/questions") Create Event
+            a.nav-link(href="/questions") Event
           

@@ -1,30 +1,43 @@
+div(class="headline") 1. Event Details
 .form-group
   label(for="title") EVENT TITLE
   input.form-control(type="text", name="title", placeholder="Give it a short distinct name?", value=question.title)
-.form-group
-  label(for="tags") Tags
-  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
 .form-group
   label(for="location") LOCATION
   input.form-control(type="text", name="location", placeholder="Search for a venue or address", value=question.location)
 .row
   .col-6
     .form-group
-      label(for="date-start") STARTS
-      input.form-control(type="date", name="date-start", placeholder="YYY-MM-DD", value=question.date-start)
+      label(for="date_start") STARTS
+      input.form-control(type="date", name="date_start", placeholder="YYYY-MM-DD", value=question.date_start)
   .col-6
     .form-group
-      label(for="date-end") ENDS
-      input.form-control(type="date", name="date-end", placeholder="YYY-MM-DD", value=question.date-end)
+      label(for="date_end") ENDS
+      input.form-control(type="date", name="date_end", placeholder="YYYY-MM-DD", value=question.date_end)
 .form-group
   label(for="question") EVENT DESCRIPTION
   textarea.form-control(name="content", rows="5")= question.content
+.form-group
+  label(for="tags") Tags
+  input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=question.tags ? question.tags.join(" ") : "")
 .form-group
   label(for="organizer") ORGANIZER NAME
   input.form-control(type="text", name="organizer", placeholder="Who's organizing this event?", value=question.organizer)
 .form-group
   label(for="organizer") ORGANIZER DESCRIPTION
   textarea.form-control(name="content", rows="5")= question.content
+
+
+div(class="headline") 2. Create Tickets
+p What type of ticket would you like to start with?
+button.btn.btn-outline-primary(type="submit") +FREE TICKET
+//- form(action="/questions", method="POST")
+//-   include __free-ticket
+button(type="button", class="btn btn-outline-primary") +PAID TICKET
+
+br
+br
+div(class="headline") 3. Additional Settings
 .form-group
   label(for="type") EVENT TYPE
   br
@@ -55,26 +68,27 @@
   label(for="topic") EVENT TOPIC
   br
   select(id="topic" name="event topic")
+    option(value="Select a topic") Select a topic
     option(value="Auto, Boat & Air") Auto, Boat & Air
     option(value="Business & Professional") Business & Professional
     option(value="Charity & Causes") Charity & Causes
     option(value="Community & Culture") Community & Culture
     option(value="Family & Education") Family & Education
     option(value="Fashion & Beauty") Fashion & Beauty
-    //- 
-    option(value="Concert or Performance") Concert or Performance
-    option(value="Conference") Conference
-    option(value="Convention") Convention
-    option(value="Dinner or Gala") Dinner or Gala
-    option(value="Festival or Fail") Festival or Fail
-    option(value="Game or Competition") Game or Competition
-    option(value="Metting or Networking Event") Metting or Networking Event
+    option(value="Film, Media& Entertainment") Film, Media & Entertainment
+    option(value="Food & Drink") Food & Drink
+    option(value="Government & Politics") Government & Politics
+    option(value="Health & Wellness") Health & Wellness
+    option(value="Hobbies & Special Interest") Hobbies & Special Interest
+    option(value="Home & Lifestyle") Home & Lifestyle
+    option(value="Music") Muisic
     option(value="Other") Other
-    option(value="Party or Social Gathering") Party or Social Gathering
-    option(value="Race or Endurance Event") Race or Endurance Event
-    option(value="Rally") Rally
-    option(value="Screening") Screening
-    option(value="Seminar or Talk") Seminar or Talk
-    option(value="Tour") Tour
-    option(value="Tournament") Tournament
-    option(value="Tradeshow, Consumer Show, or Expo") Tradeshow, Consumer Show, or Expo
+    option(value="Performing & Visual Arts") Performing & Visual Arts
+    option(value="Religion& Spirituality") Religion & Spirituality
+    option(value="School Activities") School Activities
+    option(value="Science & Technology") Science & Technology
+    option(value="Seasonal & Holiday") Seasonal & Holiday
+    option(value="Sports & Fitness") Sports & Fitness
+    option(value="Travel & Outdoor") Travel & Outdoor
+
+br
