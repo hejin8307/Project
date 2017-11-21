@@ -63,10 +63,11 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   }
   question.title = req.body.title;
   question.content = req.body.content;
-  // question.location = req.body.location;
-  // question.organizer = rep.body.organizer;
-  // question.date_start = rep.body.date_start;
-  // question.date_end = rep.body.date_end;
+  question.location = req.body.location;
+  question.date_start = req.body.date_start;
+  question.date_end = req.body.date_end;
+  question.organizer = req.body.organizer;
+  question.description = req.body.description;
   question.tags = req.body.tags.split(" ").map(e => e.trim());
 
   await question.save();
@@ -86,10 +87,11 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     title: req.body.title,
     author: user._id,
     content: req.body.content,
-    // location: rep.body.location,
-    // organizer: rep.body.organizer,
-    // date_start: rep.body.date_start,
-    // date_end: rep.body.date_end,
+    location:  req.body.location,
+    date_start:  req.body.date_start,
+    date_end:  req.body.date_end,
+    organizer: req.body.organizer,
+    description: req.body.description,
     tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
