@@ -63,12 +63,12 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   }
   question.title = req.body.title;
   question.content = req.body.content;
+  question.tags = req.body.tags.split(" ").map(e => e.trim());
   question.location = req.body.location;
   question.date_start = req.body.date_start;
   question.date_end = req.body.date_end;
   question.organizer = req.body.organizer;
   question.description = req.body.description;
-  question.tags = req.body.tags.split(" ").map(e => e.trim());
 
   await question.save();
   req.flash('success', 'Successfully updated');
@@ -87,12 +87,12 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     title: req.body.title,
     author: user._id,
     content: req.body.content,
+    tags: req.body.tags.split(" ").map(e => e.trim()),
     location:  req.body.location,
     date_start:  req.body.date_start,
     date_end:  req.body.date_end,
     organizer: req.body.organizer,
     description: req.body.description,
-    tags: req.body.tags.split(" ").map(e => e.trim()),
   });
   await question.save();
   req.flash('success', 'Successfully posted');

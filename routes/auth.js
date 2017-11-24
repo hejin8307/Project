@@ -23,20 +23,6 @@ module.exports = (app, passport) => {
     }
   );
 
-  app.get('/auth/kakao',
-  passport.authenticate('kakao', { scope : 'email' })
-  );
-
-app.get('/oauth/kakao/callback',
-  passport.authenticate('kakao', {
-    failureRedirect : '/signin',
-    failureFlash : true // allow flash messages
-  }), (req, res, next) => {
-    req.flash('success', 'Welcome!');
-    res.redirect('/questions');
-  }
-);
-
   app.get('/signout', (req, res) => {
     req.logout();
     req.flash('success', 'Successfully signed out');
