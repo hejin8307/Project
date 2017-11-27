@@ -8,12 +8,21 @@ div(class="headline") 1. Event Details
 .row
   .col-6
     .form-group
-      label(for="date_start") STARTS
-      input.form-control(type="date", name="date_start", placeholder="YYYY-MM-DD", value=question.date_start)
+      label(for="date_start") STARTS DATE
+      input.form-control(type="date", name="date_start", placeholder="YYYY-MM-DD", value=moment(question.date_start).format('YYYY-MM-DD'))
   .col-6
     .form-group
-      label(for="date_end") ENDS
-      input.form-control(type="date", name="date_end", placeholder="YYYY-MM-DD", value=question.date_end)
+      label(for="date_end") ENDS DATE
+      input.form-control(type="date", name="date_end", placeholder="YYYY-MM-DD", value=moment(question.date_end).format('YYYY-MM-DD'))
+.row
+  .col-6
+    .form-group
+      label(for="start_time") START TIME 
+      input.form-control(type="text", name="start_time", placeholder="EX) 10:00AM", value=question.start_time)
+  .col-6
+    .form-group
+      label(for="end_time") END TIME 
+      input.form-control(type="text", name="end_time", placeholder="EX) 10:00PM", value=question.end_time)
 .form-group
   label(for="question") EVENT DESCRIPTION
   textarea.form-control(name="content", rows="5")= question.content
@@ -30,9 +39,28 @@ div(class="headline") 1. Event Details
 
 div(class="headline") 2. Create Tickets
 p What type of ticket would you like to start with?
-//- 
-button(type="button", class="btn btn-outline-primary", id="btn1") +FREE TICKET
-button(type="button", class="btn btn-outline-primary", id="btn2") +PAID TICKET
+.checkbox
+label
+  input(type="checkbox", value="free ticket", id="checkbox1", )
+  label.inlineLabel +FREE TICKET
+.checkbox
+label
+  input(type="checkbox", value="free ticket", id="checkbox2",)
+  label.inlineLabel +PAID TICKET
+  br
+  .row
+    .col-6
+      label(for="ticket_name") Ticket Name
+      div(class="input-group")
+        input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button")
+    .col-6
+      label(for="price") Price
+      div(class="input-group")
+        span(class="input-group-addon") $
+        input.form-control(type="text", name="price", aria-label="Text input with radio button")
+
+//- input(type="checkbox", name="price", value="free ticket") +FREE TICKET
+//- input(type="checkbox", name="price", value="paid ticket") +PAID TICKET
 
 br
 br
@@ -40,7 +68,7 @@ div(class="headline") 3. Additional Settings
 .form-group
   label(for="type") EVENT TYPE
   br
-  select(id="type" name="event type")
+  select(id="type" name="eventType", value=question.eventType)
     option(value="Select the type of event") select the type of event
     option(value="Appearance or Signing") Appearance or Signing
     option(value="Attraction") Attraction
@@ -66,7 +94,7 @@ div(class="headline") 3. Additional Settings
 .form-group
   label(for="topic") EVENT TOPIC
   br
-  select(id="topic" name="event topic")
+  select(id="topic" name="event_topic")
     option(value="Select a topic") Select a topic
     option(value="Auto, Boat & Air") Auto, Boat & Air
     option(value="Business & Professional") Business & Professional
@@ -91,3 +119,7 @@ div(class="headline") 3. Additional Settings
     option(value="Travel & Outdoor") Travel & Outdoor
 
 br
+
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+script(src="_form.js")
+script(type="text/javascript")

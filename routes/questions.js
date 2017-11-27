@@ -67,8 +67,15 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.location = req.body.location;
   question.date_start = req.body.date_start;
   question.date_end = req.body.date_end;
+  question.start_time = req.body.start_time;
+  question.end_time = req.body.end_time;
   question.organizer = req.body.organizer;
   question.description = req.body.description;
+  question.ticket_name = req.body.ticket_name;
+  question.price = req.body.price;
+  question.eventType = req.body.eventType;
+  // question.checkbox1 = req.body.checkbox1;
+  // question.checkbox2 = req.body.checkbox2;
 
   await question.save();
   req.flash('success', 'Successfully updated');
@@ -88,11 +95,18 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     author: user._id,
     content: req.body.content,
     tags: req.body.tags.split(" ").map(e => e.trim()),
-    location:  req.body.location,
-    date_start:  req.body.date_start,
-    date_end:  req.body.date_end,
+    location: req.body.location,
+    date_start: req.body.date_start,
+    date_end: req.body.date_end,
+    start_time: req.body.start_time,
+    end_time: req.body.end_time,
     organizer: req.body.organizer,
     description: req.body.description,
+    ticket_name: req.body.ticket_name,
+    price: req.body.price,
+    eventType: req.body.eventType,
+    // checkbox1: req.body.checkbox1,
+    // checkbox2: req.body.checkbox2
   });
   await question.save();
   req.flash('success', 'Successfully posted');
