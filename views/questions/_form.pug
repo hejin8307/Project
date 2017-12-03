@@ -41,23 +41,21 @@ div(class="headline") 2. Create Tickets
 p What type of ticket would you like to start with?
 .checkbox
 label
-  input(type="checkbox", value="free ticket", id="checkbox1", )
+  input(type="checkbox", value=question.free)
   label.inlineLabel +FREE TICKET
 .checkbox
 label
-  input(type="checkbox", value="free ticket", id="checkbox2",)
+  input(type="checkbox", value=question.paid)
   label.inlineLabel +PAID TICKET
   br
   .row
     .col-6
-      label(for="ticket_name") Ticket Name
       div(class="input-group")
-        input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button")
+        input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button", value=question.ticket_name)
     .col-6
-      label(for="price") Price
       div(class="input-group")
         span(class="input-group-addon") $
-        input.form-control(type="text", name="price", aria-label="Text input with radio button")
+        input.form-control(type="text", name="price", aria-label="Text input with radio button", value=question.price)
 
 //- input(type="checkbox", name="price", value="free ticket") +FREE TICKET
 //- input(type="checkbox", name="price", value="paid ticket") +PAID TICKET
@@ -68,7 +66,7 @@ div(class="headline") 3. Additional Settings
 .form-group
   label(for="type") EVENT TYPE
   br
-  select(id="type" name="eventType", value=question.eventType)
+  select(id="type", name="eventType", value=question.eventType)
     option(value="Select the type of event") select the type of event
     option(value="Appearance or Signing") Appearance or Signing
     option(value="Attraction") Attraction
@@ -94,7 +92,7 @@ div(class="headline") 3. Additional Settings
 .form-group
   label(for="topic") EVENT TOPIC
   br
-  select(id="topic" name="event_topic")
+  select(id="topic", name="eventTopic")
     option(value="Select a topic") Select a topic
     option(value="Auto, Boat & Air") Auto, Boat & Air
     option(value="Business & Professional") Business & Professional

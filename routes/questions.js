@@ -74,8 +74,9 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.ticket_name = req.body.ticket_name;
   question.price = req.body.price;
   question.eventType = req.body.eventType;
-  // question.checkbox1 = req.body.checkbox1;
-  // question.checkbox2 = req.body.checkbox2;
+  // question.eventTopic = req.body.eventTopic;
+  question.checkbox1 = req.body.free;
+  question.checkbox2 = req.body.paid;
 
   await question.save();
   req.flash('success', 'Successfully updated');
@@ -105,8 +106,9 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     ticket_name: req.body.ticket_name,
     price: req.body.price,
     eventType: req.body.eventType,
-    // checkbox1: req.body.checkbox1,
-    // checkbox2: req.body.checkbox2
+    // eventTopic: req.body.eventTopic
+    checkbox1: req.body.free,
+    checkbox2: req.body.paid
   });
   await question.save();
   req.flash('success', 'Successfully posted');

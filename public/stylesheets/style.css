@@ -136,4 +136,31 @@ a:hover {
     margin-bottom: 0.5em;
     color: #bbb; }
 
+.date_start {
+  color: gray; }
+
+.organizer {
+  color: gray; }
+
+.fa-upload {
+  color: #0278b8;
+  width: 30px;
+  height: 32px; }
+
+.fa-bookmark-o {
+  color: #0278b8; }
+
+.btn-register {
+  background-color: #00ab44;
+  color: white;
+  font-weight: 600;
+  width: 200px; }
+
+.btn-register:hover {
+  opacity: 0.9; }
+
+.bar {
+  background-color: #666A73;
+  height: 0.6px; }
+
 /*# sourceMappingURL=style.css.map */
