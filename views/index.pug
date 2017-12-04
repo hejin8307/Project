@@ -6,15 +6,31 @@ block hero-unit
       
 block content
   .container
-    .row
-      .col-md-6
-        h3 서비스 목적
-        p 본 서비스는 웹프로그래밍 수업을 위해서 sample로 만들어보는 것입니다. 
-      .col-md-6
-        h3 주요 기능
-        ul
-          li 질문글 등록/보기/변경/삭제
-          li 답변글 등록/삭제
-          li 사용자 관리/인증
-          li API
+    div(class="background")
+      br
+      div(class="search")
+        p(class="text") Find your next experience
+        br
+        br
+        div(class="input-group")
+            input(type="text", class="form-control", placeholder="Search events or categories", aria-label="Search events or categories")
+            input(type="text", class="form-control", placeholder="city or location", aria-label="city or location")
+            div(class="dropdown")
+              button(class="btn btn-secondary dropdown-toggle", type="button", id="dropdownMenuButton", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") All Dates
+              div(class="dropdown-menu", aria-labelledby="dropdownMenuButton")
+                a(class="dropdown-item", href="#") All Dates
+                a(class="dropdown-item", href="#") Today
+                a(class="dropdown-item", href="#") Tomorrow
+                a(class="dropdown-item", href="#") This Week
+                a(class="dropdown-item", href="#") This Weekend
+                a(class="dropdown-item", href="#") Next Week
+                a(class="dropdown-item", href="#") Next Month
+            span(class="input-group-btn")
+              button(class="btn btn-gray", type="button") SEARCH
+      
 
+      div(class="search2")
+          div(class="input-group")
+            input(type="text", class="form-control", placeholder="Search events or categories", aria-label="Recipient's username", aria-describedby="basic-addon2")
+            span(class="input-group-addon" id="basic-addon2")
+              i(class="fa fa-search" aria-hidden="true")                

@@ -23,14 +23,16 @@ block content
                 .col-3
                   i(class="fa fa-bookmark-o fa-3x", aria-hidden="true")
             .col-4
-              button(type="button", class="btn btn-register btn-lg") REGISTER
+              a.btn.btn-register(href='/question/list') #[i.fa.fa-plus] REGISTER
       br
       .container
       br
       .col-xs-5
         .row
           .col-8
+            p Description 
             p #{question.content}
+            p Tags #{question.tags}
           .col-4
             p #{moment(question.start_date).format('DD MM YYYY')}
 

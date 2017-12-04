@@ -1,39 +1,10 @@
-//- .content= question.content
-//- .date= question.date_start
-//- .location= question.location
-//- .tags.badges
-//-   each tag in question.tags
-//-     span.badge.badge-phill.badge-secondary= tag
-//-     | 
-
-
-
-
-
-
-
-
-
-//- div(class="card-deck")
-//-   div(class="card")
-//-     img(class="card-img-top" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F36099902%2F188355823486%2F1%2Foriginal.jpg?h=230&amp;w=460&amp;rect=0%2C0%2C2160%2C1080&amp;s=1035026ceb8c254b7e75c0397cc2e0a7"
-//-     alt="Card image cap")
-//-     div(class="card-body")
-//-       h8(class="card-text")
-//-         .date= question.date_start
-//-       h4(class="card-title")
-//-         .title= question.title
-//-       p(class="card-text")
-//-         .location= question.location
-//-     div(class="card-footer")
-//-       a(href="#" class="card-link")
-//-         .tag.badges
-//-           each tag in question.tags
-//-             span.badge.badge-phill.badge-secondary= tag
-  
-
-
-
+.content= question.content
+p #{moment(question.date_start).format('YYYY년 MM월 DD일')}
+.location= question.location
+.tags.badges
+  each tag in question.tags
+    span.badge.badge-phill.badge-secondary= tag
+    | 
 .row
   .col-sm
     .numbers.

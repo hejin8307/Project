@@ -18,11 +18,11 @@ div(class="headline") 1. Event Details
   .col-6
     .form-group
       label(for="start_time") START TIME 
-      input.form-control(type="text", name="start_time", placeholder="EX) 10:00AM", value=question.start_time)
+      input.form-control(type="time", name="start_time", placeholder="EX) 10:00AM", value=question.start_time)
   .col-6
     .form-group
       label(for="end_time") END TIME 
-      input.form-control(type="text", name="end_time", placeholder="EX) 10:00PM", value=question.end_time)
+      input.form-control(type="time", name="end_time", placeholder="EX) 10:00PM", value=question.end_time)
 .form-group
   label(for="question") EVENT DESCRIPTION
   textarea.form-control(name="content", rows="5")= question.content
@@ -39,23 +39,24 @@ div(class="headline") 1. Event Details
 
 div(class="headline") 2. Create Tickets
 p What type of ticket would you like to start with?
-.checkbox
+.checkbox(name="free", value=question.free)
 label
   input(type="checkbox", value=question.free)
   label.inlineLabel +FREE TICKET
-.checkbox
+.checkbox(name="paid", value=question.paid)
 label
   input(type="checkbox", value=question.paid)
   label.inlineLabel +PAID TICKET
   br
   .row
     .col-6
-      div(class="input-group")
-        input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button", value=question.ticket_name)
+      label(for="ticket_name") Ticket Name
+      input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button", value=question.ticket_name)
     .col-6
+      label(for="price") Price
       div(class="input-group")
         span(class="input-group-addon") $
-        input.form-control(type="text", name="price", aria-label="Text input with radio button", value=question.price)
+        input.form-control(type="text", name="price", placeholder="15.00", value=question.price)
 
 //- input(type="checkbox", name="price", value="free ticket") +FREE TICKET
 //- input(type="checkbox", name="price", value="paid ticket") +PAID TICKET
@@ -63,10 +64,18 @@ label
 br
 br
 div(class="headline") 3. Additional Settings
+//- .form-group
+//-   label(for="type") EVENT TYPE
+//-   br
+//-   select#type(name='eventType')
+//-     each name in eventType
+//-       option(value=name, check=(name==question.eventType))= name
+
+
 .form-group
   label(for="type") EVENT TYPE
   br
-  select(id="type", name="eventType", value=question.eventType)
+  select(id="type", name="eventType")
     option(value="Select the type of event") select the type of event
     option(value="Appearance or Signing") Appearance or Signing
     option(value="Attraction") Attraction
@@ -74,7 +83,7 @@ div(class="headline") 3. Additional Settings
     option(value="Concert or Performance") Concert or Performance
     option(value="Class, Training, or Workshop") Class, Training, or Workshop
     option(value="Concert or Performance") Concert or Performance
-    option(value="Conference") Conference
+    option(value="Conference", checked=(question.value="Conference")) Conference
     option(value="Convention") Convention
     option(value="Dinner or Gala") Dinner or Gala
     option(value="Festival or Fail") Festival or Fail

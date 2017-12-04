@@ -40,6 +40,10 @@ router.get('/new', needAuth, (req, res, next) => {
   res.render('questions/new', {question: {}});
 });
 
+router.get('/list', (req, res, next) => {
+  res.render('users/list', {messages: req.flash()});
+});
+
 router.get('/:id/edit', needAuth, catchErrors(async (req, res, next) => {
   const question = await Question.findById(req.params.id);
   res.render('questions/edit', {question: question});
@@ -74,9 +78,9 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.ticket_name = req.body.ticket_name;
   question.price = req.body.price;
   question.eventType = req.body.eventType;
-  // question.eventTopic = req.body.eventTopic;
-  question.checkbox1 = req.body.free;
-  question.checkbox2 = req.body.paid;
+  question.eventTopic = req.body.eventTopic;
+  question.free = req.body.free;
+  question.paid = req.body.paid;
 
   await question.save();
   req.flash('success', 'Successfully updated');
@@ -91,6 +95,7 @@ router.delete('/:id', needAuth, catchErrors(async (req, res, next) => {
 
 router.post('/', needAuth, catchErrors(async (req, res, next) => {
   const user = req.user;
+  console.log(req.body);
   var question = new Question({
     title: req.body.title,
     author: user._id,
@@ -106,9 +111,9 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     ticket_name: req.body.ticket_name,
     price: req.body.price,
     eventType: req.body.eventType,
-    // eventTopic: req.body.eventTopic
-    checkbox1: req.body.free,
-    checkbox2: req.body.paid
+    eventTopic: req.body.eventTopic,
+    free: req.body.free,
+    paid: req.body.paid
   });
   await question.save();
   req.flash('success', 'Successfully posted');

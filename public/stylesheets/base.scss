@@ -70,3 +70,51 @@ a:hover {
 .headline {
   font-size : 30px;
 }
+
+// 내꺼
+.search {
+  background-color: white;
+  margin: 10px auto;
+  width: 95%;
+  border-radius: 4px;
+  margin-top: -140px;
+  position: relative;
+  padding : 25px 0px;
+  border: 1px solid #BBBBBB;
+}
+
+.text {
+  display: block;
+  font-size: 45px;
+  color: black;
+  text-align: center;
+  margin-bottom: -10px;
+  margin-top: 10px;
+}
+
+.input-group {
+  width : 80%;
+  margin : auto;
+  padding-bottom : 20px;
+}
+
+.search2 {
+  display: none;
+}
+
+#dropdownMenuButton {
+  background-color : white;
+  color : gray;
+  border : 1px solid lightgray;
+  border-radius: 0;
+}
+
+.btn-gray {
+  background-color : black;
+  color : white;
+}
+
+.btn-gray:hover {
+  background-color : rgb(43, 43, 43);
+  color : white;
+}
