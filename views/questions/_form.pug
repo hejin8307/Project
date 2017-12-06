@@ -48,18 +48,10 @@ label
   input(type="checkbox", value=question.paid)
   label.inlineLabel +PAID TICKET
   br
-  .row
-    .col-6
-      label(for="ticket_name") Ticket Name
-      input.form-control(type="text", name="ticket_name", aria-label="Text input with radio button", value=question.ticket_name)
-    .col-6
-      label(for="price") Price
-      div(class="input-group")
-        span(class="input-group-addon") $
-        input.form-control(type="text", name="price", placeholder="15.00", value=question.price)
-
-//- input(type="checkbox", name="price", value="free ticket") +FREE TICKET
-//- input(type="checkbox", name="price", value="paid ticket") +PAID TICKET
+  label(for="price") Price
+  div(class="input-group")
+    span(class="input-group-addon") $
+    input.form-control(type="text", name="price", placeholder="15.00", value=question.price)
 
 br
 br

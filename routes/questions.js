@@ -75,7 +75,6 @@ router.put('/:id', catchErrors(async (req, res, next) => {
   question.end_time = req.body.end_time;
   question.organizer = req.body.organizer;
   question.description = req.body.description;
-  question.ticket_name = req.body.ticket_name;
   question.price = req.body.price;
   question.eventType = req.body.eventType;
   question.eventTopic = req.body.eventTopic;
@@ -108,7 +107,6 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     end_time: req.body.end_time,
     organizer: req.body.organizer,
     description: req.body.description,
-    ticket_name: req.body.ticket_name,
     price: req.body.price,
     eventType: req.body.eventType,
     eventTopic: req.body.eventTopic,

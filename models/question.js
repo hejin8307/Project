@@ -14,7 +14,6 @@ var schema = new Schema({
   end_time: {type: String, trim: true, required: true},
   organizer: {type: String, trim: true, required: true},
   description: {type: String, trim: true, required: true},
-  ticket_name: {type: String, trim: true, required: true},
   price: {type: Number, default: 0},
   free: {type: String, checked: true},
   paid: {type: String, checked: true},
@@ -25,8 +24,6 @@ var schema = new Schema({
   numReads: {type: Number, default: 0},
   createdAt: {type: Date, default: Date.now},
 
-  name: {type: String, required: true, trim: true},
-  email: {type: String, required: true, index: true, unique: true, trim: true},
 }, {
   toJSON: { virtuals: true},
   toObject: {virtuals: true}
