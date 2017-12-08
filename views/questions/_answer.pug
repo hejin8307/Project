@@ -1,20 +1,57 @@
-.answer.card
-  .numbers.like-badge
-    .number
-      span.number.num-votes= question.numLikes
-    .button
-      a.like(href='#', data-id=answer.id)
-        i.fa.fa-thumbs-up
-        | 
-        | Like
+//- .answer.card
+//-   .numbers.like-badge
+//-     .number
+//-       span.number.num-votes= question.numLikes
+//-     .button
+//-       a.like(href='#', data-id=answer.id)
+//-         i.fa.fa-thumbs-up
+//-         | 
+//-         | Like
 
-  .card-body
-    .content= answer.content
-  .row.card-body
-    .col-sm
-    .col-sm.text-right
-      .author
-        | answered on #{moment(answer.createdAt).format('YYYY-MM-DD')}
-        if answer.author
-          | 
-          | by #[a(href=`/users/${answer.author.id}`)= answer.author.name]
+//-   .card-body
+//-     .content= answer.content
+//-   .row.card-body
+//-     .col-sm
+//-     .col-sm.text-right
+//-       .author
+//-         | answered on #{moment(answer.createdAt).format('YYYY-MM-DD')}
+//-         if answer.author
+//-           | 
+//-           | by #[a(href=`/users/${answer.author.id}`)= answer.author.name]
+    
+
+extends ../layout
+
+block content
+  .container
+    p REGISTER
+          
+    table.table.table-hover
+      thead
+        tr
+          th Name
+          th Email
+          th Created At
+          th
+      tbody
+        
+          tr
+            td
+              if answer.author
+                | 
+                | #[a(href=`/users/${answer.author.id}`)= answer.author.name]
+            td
+              if answer.author
+                | 
+                | #[a(href=`/users/${answer.author.email}`)= answer.author.email]
+            td
+              if answer.author
+                | 
+                | #[a(href=`/users/${answer.author.createdAt}`)= answer.author.createdAt]
+
+    //- p
+    //-   a.btn.btn-outline-secondary(href='/users/') List
+    //-   | 
+    //-   a.btn.btn-outline-primary(href=`/users/${user._id}/edit`) Edit
+    //-   | 
+    //-   a.btn.btn-outline-danger.need-confirm-btn(href=`/users/${user._id}?_method=DELETE`) Delete

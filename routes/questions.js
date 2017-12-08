@@ -1,6 +1,6 @@
 const express = require('express');
 const Question = require('../models/question');
-const Answer = require('../models/answer'); 
+const Answer = require('../models/answer');
 const catchErrors = require('../lib/async-error');
 
 const router = express.Router();
@@ -111,8 +111,14 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     eventType: req.body.eventType,
     eventTopic: req.body.eventTopic,
     free: req.body.free,
-    paid: req.body.paid
+    paid: req.body.paid,
   });
+  
+  // object = {
+  //   name: req.body.free ? true : false,
+  //   second: req.body.paid ? true : false
+  // }
+
   await question.save();
   req.flash('success', 'Successfully posted');
   res.redirect('/questions');
@@ -138,6 +144,7 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
 
   req.flash('success', 'Successfully answered');
   res.redirect(`/questions/${req.params.id}`);
+
 }));
 
 
