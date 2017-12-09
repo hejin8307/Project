@@ -20,11 +20,11 @@
 //-           | by #[a(href=`/users/${answer.author.id}`)= answer.author.name]
     
 
-extends ../layout
+//- extends ../layout
 
 block content
   .container
-    p REGISTER
+    //- p REGISTER
           
     table.table.table-hover
       thead
@@ -34,7 +34,7 @@ block content
           th Created At
           th
       tbody
-        
+        each answer in answers
           tr
             td
               if answer.author
@@ -48,10 +48,3 @@ block content
               if answer.author
                 | 
                 | #[a(href=`/users/${answer.author.createdAt}`)= answer.author.createdAt]
-
-    //- p
-    //-   a.btn.btn-outline-secondary(href='/users/') List
-    //-   | 
-    //-   a.btn.btn-outline-primary(href=`/users/${user._id}/edit`) Edit
-    //-   | 
-    //-   a.btn.btn-outline-danger.need-confirm-btn(href=`/users/${user._id}?_method=DELETE`) Delete

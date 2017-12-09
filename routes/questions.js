@@ -113,11 +113,7 @@ router.post('/', needAuth, catchErrors(async (req, res, next) => {
     free: req.body.free,
     paid: req.body.paid,
   });
-  
-  // object = {
-  //   name: req.body.free ? true : false,
-  //   second: req.body.paid ? true : false
-  // }
+
 
   await question.save();
   req.flash('success', 'Successfully posted');
@@ -142,11 +138,9 @@ router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
   question.numAnswers++;
   await question.save();
 
-  req.flash('success', 'Successfully answered');
+  req.flash('success', 'Successfully register');
   res.redirect(`/questions/${req.params.id}`);
 
 }));
-
-
 
 module.exports = router;

@@ -39,21 +39,6 @@ div(class="headline") 1. Event Details
 
 div(class="headline") 2. Create Tickets
 p What type of ticket would you like to start with?
-//- .checkbox(name="free", value=question.checkbox)
-//- label
-//-   input(type="checkbox", value=question.free)
-//-   label.inlineLabel +FREE TICKET
-//- .checkbox(name="paid", value="paid", checked=(question.value="free"))
-//- label
-//-   input(type="checkbox", value=question.paid)
-//-   label.inlineLabel +PAID TICKET
-//-   br
-//-   label(for="price") Price
-//-   div.input-group
-//-     span.input-group-addon $
-//-     input.form-control(type="text", name="price", placeholder="15.00", value=question.price)
-
-//- form(action='/quesitions', method='POST')
 .radio
   input(type="radio", name="free")
   label.inlineLabel +FREE TICKET
@@ -65,19 +50,13 @@ p What type of ticket would you like to start with?
     .input-group
       span.input-group-addon $
       input.form-control(type="text", name="price", placeholder="30.00", value=question.price)
+      br
+  p P.S. If ticket price is free, please write down 0 in the box for the price.
 
 
 br
 br
 div(class="headline") 3. Additional Settings
-//- .form-group
-//-   label(for="type") EVENT TYPE
-//-   br
-//-   select#type(name='eventType')
-//-     each name in eventType
-//-       option(value=name, check=(name==question.eventType))= name
-
-
 .form-group
   label(for="type") EVENT TYPE
   br

@@ -18,62 +18,30 @@ block content
       p Event Type : #{question.eventType}
       p Event Topic : #{question.eventTopic}
       p Tags : #{question.tags}
-    
-      a.btn.btn-register(href='/questions/list') #[i.fa.fa-plus] REGISTER
-      br
-      br
-      form(action='/questions', method='GET')
-        a.btn.btn-outline-secondary(href='/questions') List
-        |
-        button.btn.btn-primary(type='submit') Register 
-      br
+  
+      
 
       .buttons
         if currentUser && question.author.id == currentUser.id
           | 
           a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
           | 
-          a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
+          a.btn.btn-outline-danger.need-confirm-btn(href=`/answers/${question.id}?_method=delete`) Delete
 
+      br
+      form(action='/questions', method='GET')
+        a.btn.btn-outline-secondary(href='/questions') List
 
       br
       if question.numAnswers > 0
         hr
-        //- h3 #{question.numAnswers} Answer(s)
+        h3 #{question.numAnswers} Register(s)
         .answers.show
-          each answer in answers
-            include _answer
-
+          include _answer
       form(action=`/questions/${question.id}/answers`, method='POST')
         .form-group
-          //- label(for='answer') Your Answer
-          //- textarea.form-control(name="content", rows="5")
+          textarea.form-control(name="content", rows="5", placeholder="If you want to participate in the event, you should write that I want to participate in the event in the box.")
         button.btn.btn-primary(type="submit") Register
 
 
-
-    //- .question.show
-    //-   include _question
-
-      .buttons
-        button.btn.btn-primary #[i.fa.fa-thumbs-up] Like
-        if currentUser && question.author.id == currentUser.id
-          | 
-          a.btn.btn-outline-secondary(href=`/questions/${question.id}/edit`) Edit
-          | 
-          a.btn.btn-outline-danger.need-confirm-btn(href=`/questions/${question.id}?_method=delete`) Delete
-          
-    //- br
-    //- if question.numAnswers > 0
-    //-   hr
-    //-   h3 #{question.numAnswers} Answer(s)
-    //-   .answers.show
-    //-     each answer in answers
-    //-       include _answer
-
-    //- form(action=`/questions/${question.id}/answers`, method='POST')
-    //-   .form-group
-    //-     label(for='answer') Your Answer
-    //-     textarea.form-control(name="content", rows="5")
-    //-   button.btn.btn-primary(type="submit") Post Your Answer
-
+    
