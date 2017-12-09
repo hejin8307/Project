@@ -35,7 +35,7 @@ block content
       br
       if question.numAnswers > 0
         hr
-        h3 #{question.numAnswers} Register(s)
+        h3 #{question.numAnswers} Participant(s)
         .answers.show
           include _answer
       form(action=`/questions/${question.id}/answers`, method='POST')
