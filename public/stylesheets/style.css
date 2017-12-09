@@ -57,46 +57,6 @@ a:hover {
 .headline {
   font-size: 30px; }
 
-.search {
-  background-color: white;
-  margin: 10px auto;
-  width: 95%;
-  border-radius: 4px;
-  margin-top: -140px;
-  position: relative;
-  padding: 25px 0px;
-  border: 1px solid #BBBBBB; }
-
-.text {
-  display: block;
-  font-size: 45px;
-  color: black;
-  text-align: center;
-  margin-bottom: -10px;
-  margin-top: 10px; }
-
-.input-group {
-  width: 80%;
-  margin: auto;
-  padding-bottom: 20px; }
-
-.search2 {
-  display: none; }
-
-#dropdownMenuButton {
-  background-color: white;
-  color: gray;
-  border: 1px solid lightgray;
-  border-radius: 0; }
-
-.btn-gray {
-  background-color: black;
-  color: white; }
-
-.btn-gray:hover {
-  background-color: #2b2b2b;
-  color: white; }
-
 .form-signin {
   width: 300px;
   margin: 0 auto;
@@ -200,12 +160,5 @@ a:hover {
   opacity: 0.9;
   color: white;
   background-color: #17532e; }
-
-.bar {
-  background-color: #666A73;
-  height: 0.6px; }
-
-.under {
-  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */
