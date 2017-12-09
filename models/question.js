@@ -29,55 +29,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 schema.plugin(mongoosePaginate);
-// schema.statics.eventType = [
-//   "Select the type of event",
-//   "Appearance or Signing",
-//   "Attraction",
-//   "Camp, Trip, or Retreat",
-//   "Concert or Performance",
-//   "Class, Training, or Workshop",
-//   "Concert or Performance",
-//   "Conference",
-//   "Convention",
-//   "Dinner or Gala",
-//   "Festival or Fail",
-//   "Game or Competition",
-//   "Metting or Networking Event",
-//   "Other",
-//   "Party or Social Gathering",
-//   "Race or Endurance Event",
-//   "Rally",
-//   "Screening",
-//   "Seminar or Talk",
-//   "Tour",
-//   "Tournament",
-//   "Tradeshow, Consumer Show, or Expo"
-// ];
-
-// schema.statics.eventTopic = [
-//   "Select a topic",
-//   "Auto, Boat & Air",
-//   "Business & Professional",
-//   "Charity & Causes",
-//   "Community & Culture",
-//   "Family & Education",
-//   "Fashion & Beauty",
-//   "Film, Media& Entertainment",
-//   "Food & Drink",
-//   "Government & Politics",
-//   "Health & Wellness",
-//   "Hobbies & Special Interest",
-//   "Home & Lifestyle",
-//   "Music",
-//   "Other",
-//   "Performing & Visual Arts",
-//   "Religion& Spirituality",
-//   "School Activities",
-//   "Science & Technology",
-//   "Seasonal & Holiday",
-//   "Sports & Fitness",
-//   "Travel & Outdoor"
-// ];
 
 var Question = mongoose.model('Question', schema);
 
